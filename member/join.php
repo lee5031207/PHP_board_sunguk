@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>성욱게시판 글쓰기</title>
+    <title>PETSTAGRAM</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
             integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
@@ -29,7 +29,7 @@
                         <span class="icon-bar"></span>
                     </button>
                     <a class="navbar-brand" href="../index.php">
-						LEE SUNG UK
+                    PETSTAGRAM
                     </a>
                 </div>
                 <div class="collapse navbar-collapse" id="nav_menu">

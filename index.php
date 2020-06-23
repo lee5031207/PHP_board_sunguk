@@ -31,7 +31,7 @@
                         <span class="icon-bar"></span>
                     </button>
                     <a class="navbar-brand" href="#">
-						LEE SUNG UK
+						PETSTAGRAM
                     </a>
                 </div>
                 <div class="collapse navbar-collapse" id="nav_menu">
@@ -41,7 +41,7 @@
                         </li>
                         <?
                         if($member[user_id]){
-                            ?><li><a><?echo $member[name]?>(<?echo $member[user_id]?>)님 환영합니다로라.</a></li>
+                            ?><li><a><?#echo $member[name]?>(<?#echo $member[user_id]?>)님 환영합니다로라.</a></li>
                             
                             <?
                         }else{?>
@@ -71,4 +71,5 @@
          <div>ㅇㅇ</div>
      </div>
 </body>
-</html>
+</html> 
+

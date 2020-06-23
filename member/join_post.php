@@ -53,8 +53,16 @@ $query= "Insert into member
 values('$id','$user_id','$name','$nick_name','$birth','$sex',
         '$tel','$email','$pw','$addr_1','$addr_2','$regdate','$ip')";
 
+
+$query2 = "Create table $user_id (
+    user_id char(15),
+    name char(15)
+    )";
+
+
 mysql_query("set names utf8", $connect);  //mysql에 한글 세팅?
-mysql_query($query,$connect);   
+mysql_query($query,$connect); 
+mysql_query($query2,$connect);
 
 mysql_close;
 
