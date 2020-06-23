@@ -33,10 +33,10 @@
                     </a>
                 </div>
                 <div class="collapse navbar-collapse" id="nav_menu">
-                    <ul class="nav navbar-nav">
-                        <li>
+                    <ul class="nav navbar-nav navbar-right">
+                        <!-- <li>
                             <a href="../board/bbs1/list.php">자유게시판</a>
-                        </li>
+                        </li> -->
                         <li class="active">
                             <a href="">SIGN IN</a>
                         </li>

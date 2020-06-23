@@ -36,17 +36,18 @@
                 </div>
                 <div class="collapse navbar-collapse" id="nav_menu">
                     <ul class="nav navbar-nav">
-                        <li class="active">
-                            <a href="#">자유게시판</a>
-                        </li>
                         <li>
-                            <a href="./qnalist.php">Q&A</a>
+                            <a href="./list.php">자유게시판</a>
+                        </li>
+                        <li class="active">
+                            <a href="#">Q&A</a>
                         </li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
                     <?
                         if($member[user_id]){
                             ?><li><a><?echo $member[name]?>(<?echo $member[user_id]?>)님 환영합니다로라.</a></li>
+                            
                             <?
                         }else{?>
                         <li>
@@ -69,14 +70,14 @@
 <!------------------------------------------------hot게시판------------------------------------------------------------------------>
 </br>
 <? 
-   $query_hot = 'select * from bbs1 where id="bbs1" order by hit desc limit 3';
+   $query_hot = 'select * from QnA order by hit desc limit 3';
    $result_hot = mysql_query($query_hot,$connect);
 ?>
  <table class="table table-borde#A4A4A4 table-hover">
             <tr>
                 <th style="text-align:center; width:7%; background-color:#A4A4A4;"></th>
                 <th style="text-align:center; width:16%; background-color:#A4A4A4;"></th>
-                <th style="text-align:center; width:40%; background-color:#A4A4A4;">HOT 게시판</th>
+                <th style="text-align:center; width:40%; background-color:#A4A4A4;">QnA 인기글</th>
                 <th style="text-align:center; width:20%; background-color:#A4A4A4;"></th>
                 <th style="text-align:center; width:7%; background-color:#A4A4A4;"></th>
             </tr>
@@ -125,11 +126,11 @@
 <!------------------------------------------------게시판------------------------------------------------------------------------>
 <?
     $_page=$_GET[_page];
-    $view_total = 5; //한 페이지에 5개의 게시글이 보인다
+    $view_total = 2; //한 페이지에 5개의 게시글이 보인다
     if(!$_page)($_page=1); //페이지 번호가 지정이 안되었을 경우
     $page=($_page-1)*$view_total;
     
-    $query = "select count(*) from bbs1 where id='bbs1'";
+    $query = "select count(*) from QnA ";
     mysql_query("set names utf8");
     $result = mysql_query($query,$connect);
     $temp=mysql_fetch_array($result);
@@ -141,7 +142,7 @@
             <tr>
                 <th style="text-align:center; width:7%; background-color:#A4A4A4;"></th>
                 <th style="text-align:center; width:16%; background-color:#A4A4A4;"></th>
-                <th style="text-align:center; width:40%; background-color:#A4A4A4;">자유 게시판</th>
+                <th style="text-align:center; width:40%; background-color:#A4A4A4;">QnA 게시판</th>
                 <th style="text-align:center; width:20%; background-color:#A4A4A4;"></th>
                 <th style="text-align:center; width:7%; background-color:#A4A4A4;"></th>
             </tr>
@@ -153,7 +154,7 @@
                 <th style="text-align:center; width:7%; background-color:#A4A4A4;">조회수</th>
             </tr>
 <?
-    $query="select * from bbs1 where id='bbs1' order by no desc limit $page,$view_total "; 
+    $query="select * from QnA order by no desc limit $page,$view_total "; 
     // desc내림차순 asc오름차순  limit view_total개의 게시물 만 가지고 온다
     
     $result=mysql_query($query,$connect);
@@ -177,7 +178,7 @@
             <tr>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
-                <td style="text-align:center;"><?include("./list_page.php");?></td>
+                <td style="text-align:center;"><?include("./qnalist_page.php");?></td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
             </tr>
@@ -229,7 +230,7 @@
                         <h4 class="modal-title" id="exampleModalLabel">글쓰기</h4>
                     </div>
                 <div class="modal-body">
-                    <form name="write" action="write_post.php" method="POST" enctype="multipart/form-data">
+                    <form name="write" action="qna_write_post.php" method="POST" enctype="multipart/form-data">
                         <input type="hidden" name="id" value="bbs1" class="form-control" >
                         아이디&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;
                         <input type="text" name="user_id" size='15' value="<?=$member[user_id];?>" readonly='readonly'><br><br>

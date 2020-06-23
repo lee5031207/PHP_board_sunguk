@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="./lib/mycss.css">
     
 </head>
-<body>"
+<body>
         <?
         include ( "./lib/dbconnection.php");
         $connect = dbconn();  //db연결함수 호출
@@ -39,9 +39,14 @@
                         <li>
                             <a href="./board/bbs1/list.php">자유게시판</a>
                         </li>
-                        <?
+                        <li>
+                            <a href="./board/bbs1/qnalist.php">Q&A</a>
+                        </li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                    <?
                         if($member[user_id]){
-                            ?><li><a><?#echo $member[name]?>(<?#echo $member[user_id]?>)님 환영합니다로라.</a></li>
+                            ?><li><a><?echo $member[name]?>(<?echo $member[user_id]?>)님 환영합니다로라.</a></li>
                             
                             <?
                         }else{?>
@@ -52,8 +57,6 @@
                             <a href="./member/login.php">LOG IN</a>
                         </li>
                         <?}?>
-                    </ul>
-                    <ul class="nav navbar-nav navbar-right">
                             <li><a href="./member/logout.php">
                             <?if($member[user_id]){?>
                                 LOG OUT
@@ -66,9 +69,7 @@
         </nav>
      </div>
      <div class="mainbox">
-         <div>ㅇㅇ</div>
-         <div>ㅇㅇ</div>
-         <div>ㅇㅇ</div>
+    
      </div>
 </body>
 </html> 
