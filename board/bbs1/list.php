@@ -98,7 +98,15 @@
 ?>
             <tr>
                 <td style="text-align:center; background-color:#FAFAFA;"><?=$cnt?></td>
-                <td style="text-align:center; background-color:#FAFAFA;"><?=$temp_hot[name]?></td>
+                <td style="text-align:center; background-color:#FAFAFA;">
+                <? if($member[user_id]){?>                
+                    <a href="mypage.php?name ">
+                        <?=$temp_hot[name]?>
+                    </a>
+                    <?}else{?>
+                        <?=$temp_hot[name]?>
+                    <?}?>
+                </td>
                 <td style="background-color:#FAFAFA;"><a href='./view.php?no=<?=$temp_hot[no]?>&id=<?=$temp_hot[id]?>'><?=$temp_hot[subject]?></a></td>
                 <!--위에줄 문법? url로 파라미터 받아오는 거 같은데  -->
                 <td style="text-align:center;background-color:#FAFAFA;"><?=$year_hot?>.<?=$month_hot?>.<?=$day_hot?>.</td>
@@ -165,7 +173,15 @@
 ?>
             <tr>
                 <td style="text-align:center; background-color:#FAFAFA;"><?=$cnt?></td>
-                <td style="text-align:center; background-color:#FAFAFA;"><?=$data[name]?></td>
+                <td style="text-align:center; background-color:#FAFAFA;">
+                <? if($member[user_id]){?>                
+                    <a href='#' data-toggle="modal" data-target="#followingModal">
+                        <?=$data[name]?>
+                    </a>
+                    <?}else{?>
+                        <?=$data[name]?>
+                    <?}?>
+                </td>
                 <td style="background-color:#FAFAFA;"><a href='./view.php?no=<?=$data[no]?>&id=<?=$data[id]?>'><?=$data[subject]?></a></td>
                 <!--위에줄 문법? url로 파라미터 받아오는 거 같은데  -->
                 <td style="text-align:center;background-color:#FAFAFA;"><?=$year?>.<?=$month?>.<?=$day?>.</td>
@@ -221,6 +237,7 @@
         </div>
 
             <!-------------------------------------------글작성 모달----------------------------------------------------------------->
+
         <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -251,6 +268,7 @@
                 </div>
             </div>
         </div>
-    </div>
+        <!-----------------------------------------------------팔로잉 모달------------------------------------------------->
+        
 </body>
 </html>

@@ -99,8 +99,16 @@
 ?>
             <tr>
                 <td style="text-align:center; background-color:#FAFAFA;"><?=$cnt?></td>
-                <td style="text-align:center; background-color:#FAFAFA;"><?=$temp_hot[name]?></td>
-                <td style="background-color:#FAFAFA;"><a href='./view.php?no=<?=$temp_hot[no]?>&id=<?=$temp_hot[id]?>'><?=$temp_hot[subject]?></a></td>
+                <td style="text-align:center; background-color:#FAFAFA;">
+                <? if($member[user_id]){?>                
+                    <a href="" data-toggle="modal" data-target="#followingModal">
+                        <?=$temp_hot[name]?>
+                    </a>
+                    <?}else{?>
+                        <?=$temp_hot[name]?>
+                    <?}?>
+                </td>
+                <td style="background-color:#FAFAFA;"><a href='./qna_view.php?no=<?=$temp_hot[no]?>&id=<?=$temp_hot[id]?>'><?=$temp_hot[subject]?></a></td>
                 <!--위에줄 문법? url로 파라미터 받아오는 거 같은데  -->
                 <td style="text-align:center;background-color:#FAFAFA;"><?=$year_hot?>.<?=$month_hot?>.<?=$day_hot?>.</td>
                 <td style="text-align:center;background-color:#FAFAFA;"><?=$temp_hot[hit]?></td>
@@ -166,8 +174,16 @@
 ?>
             <tr>
                 <td style="text-align:center; background-color:#FAFAFA;"><?=$cnt?></td>
-                <td style="text-align:center; background-color:#FAFAFA;"><?=$data[name]?></td>
-                <td style="background-color:#FAFAFA;"><a href='./view.php?no=<?=$data[no]?>&id=<?=$data[id]?>'><?=$data[subject]?></a></td>
+                <td style="text-align:center; background-color:#FAFAFA;">
+                <? if($member[user_id]){?>                
+                    <a href="" data-toggle="modal" data-target="#followingModal">
+                        <?=$temp_hot[name]?>
+                    </a>
+                    <?}else{?>
+                        <?=$temp_hot[name]?>
+                    <?}?>
+                </td>
+                <td style="background-color:#FAFAFA;"><a href='./qna_view.php?no=<?=$data[no]?>&id=<?=$data[id]?>'><?=$data[subject]?></a></td>
                 <!--위에줄 문법? url로 파라미터 받아오는 거 같은데  -->
                 <td style="text-align:center;background-color:#FAFAFA;"><?=$year?>.<?=$month?>.<?=$day?>.</td>
                 <td style="text-align:center;background-color:#FAFAFA;"><?=$data[hit]?></td>

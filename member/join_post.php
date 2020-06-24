@@ -54,15 +54,13 @@ values('$id','$user_id','$name','$nick_name','$birth','$sex',
         '$tel','$email','$pw','$addr_1','$addr_2','$regdate','$ip')";
 
 
-$query2 = "Create table $user_id (
-    user_id char(15),
-    name char(15)
-    )";
-
+$query2 = "Create table ".$user_id."_following (following_id varchar(10) not null)engine=innodb";
+$query3 = "Create table ".$user_id."_follower (follower_id varchar(10) not null)engine=innodb";
 
 mysql_query("set names utf8", $connect);  //mysql에 한글 세팅?
 mysql_query($query,$connect); 
 mysql_query($query2,$connect);
+mysql_query($query3,$connect);
 
 mysql_close;
 
